@@ -1,4 +1,6 @@
 import {Link} from "react-router-dom";
+// jackalJPEG
+import logo from "../assets/logo.webp";
 
 export const Sidebar = () => {
   const sidePaths = ["", "profile", "chat", "calendar", "welcome"];
@@ -8,22 +10,23 @@ export const Sidebar = () => {
   }
 
   return (
-    //TODO I don't know how to set styles for Link, I made a kluge in the text-link style, because of that hover doesn't work
+    //TODO I don't know how to set styles for Link, I made a kluge in the text-link class, because of that hover doesn't work
     <nav>
-      <ul>
-        {sidePaths.map((path) => {
-          return (
-            <div key={path} className="text-3xl hover:text-gray-100">
-              <Link className="text-link" to={path}>
-                <li key={path}
-                    className="flex justify-start pl-10 items-center m-4 bg-customgreen rounded-full h-20 text-white-50">
-                  {capitalize(path || "home")}
-                </li>
-              </Link>
-            </div>
-          );
-        })}
-      </ul>
+      <img src={logo} alt="error"/>
+        <ul>
+          {sidePaths.map((path) => {
+            return (
+              <div key={path} className="text-3xl hover:text-gray-100">
+                <Link className="text-link" to={path}>
+                  <li key={path}
+                      className="flex justify-start pl-10 items-center m-4 bg-customgreen rounded-full h-20 text-white-50">
+                    {capitalize(path || "home")}
+                  </li>
+                </Link>
+              </div>
+            );
+          })}
+        </ul>
     </nav>
-  );
+);
 };

@@ -1,5 +1,6 @@
 import { Sidebar } from "./sidebar";
 import { Outlet } from "react-router-dom";
+import {Header} from "./Header.jsx";
 
 export const Layout = () => {
   return (
@@ -8,6 +9,7 @@ export const Layout = () => {
         <Sidebar />
       </div>
       <div className="bg-white overflow-auto p-4">
+        <Header />
         <Outlet />
       </div>
     </div>
