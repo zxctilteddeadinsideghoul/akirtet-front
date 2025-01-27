@@ -1,1 +1,32 @@
 @import "tailwindcss";
+@config "./configs/tailwind.config.js";
+
+.text-link{
+    color: white;
+
+}
+
+.text-link:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.text-link:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.text-link:active{
+    text-decoration: none;
+    color: white;
+}
+
+.text-link:active:hover{
+    text-decoration: none;
+    color: white;
+}
+
+.text-link:focus{
+    text-decoration: none;
+    color: white;
+}

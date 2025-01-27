@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export const Sidebar = () => {
   const sidePaths = ["", "profile", "chat", "calendar", "welcome"];
@@ -8,13 +8,19 @@ export const Sidebar = () => {
   }
 
   return (
+    //TODO I don't know how to set styles for Link, I made a kluge in the text-link style, because of that hover doesn't work
     <nav>
       <ul>
         {sidePaths.map((path) => {
           return (
-            <li key={path}>
-              <Link to={path}>{capitalize(path || "home")}</Link>
-            </li>
+            <div key={path} className="text-3xl hover:text-gray-100">
+              <Link className="text-link" to={path}>
+                <li key={path}
+                    className="flex justify-start pl-10 items-center m-4 bg-customgreen rounded-full h-20 text-white-50">
+                  {capitalize(path || "home")}
+                </li>
+              </Link>
+            </div>
           );
         })}
       </ul>
