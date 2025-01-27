@@ -1,14 +1,7 @@
-import {  } from 'react'
-
-
+import { AppRouter } from "./components/Router/Router";
 
 function App() {
-
-  return (
-    <>
-
-    </>
-  )
+  return <AppRouter />;
 }
 
-export default App
+export default App;
