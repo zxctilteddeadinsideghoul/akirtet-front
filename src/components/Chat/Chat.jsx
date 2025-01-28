@@ -1,3 +1,7 @@
+/**
+ * Chat page representation
+ * @returns {JSX.Element} Page
+ */
 export const Chat = () => {
   return (
     <div className="flex justify-center">

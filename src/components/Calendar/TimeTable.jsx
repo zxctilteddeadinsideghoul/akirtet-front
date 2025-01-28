@@ -1,3 +1,7 @@
+/**
+ * Time table page representation
+ * @returns {JSX.Element} Page
+ */
 export const TimeTable = () => {
   return (
     <div className="flex justify-center">
