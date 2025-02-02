@@ -16,7 +16,7 @@ export const Layout = () => {
       {/**
        * Sidebar container
        */}
-      <div className="bg-lightgray">
+      <div className="bg-primaryblue">
         <Sidebar />
       </div>
       <div className="bg-white overflow-auto p-4">

@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <div className="flex justify-end">
       <Link className="text-link" to="/chat">
-        <div className="flex items-center justify-center text-red-500 mr-5 h-19 w-50 bg-customgreen rounded-full">
+        <div className="flex items-center justify-center text-red-500 mr-5 h-19 w-50 bg-primaryblue rounded-full">
           <div className="h-10 w-10 mr-2">
             <Image src={ChatLogo}></Image>
           </div>
@@ -22,7 +22,7 @@ export const Header = () => {
        * Profile container
        */}
       <Link className="text-link" to="/profile">
-        <div className="flex justify-center  items-center bg-customgreen rounded-full w-19 h-19">
+        <div className="flex justify-center  items-center bg-primaryblue rounded-full w-19 h-19">
           Profile
         </div>
       </Link>

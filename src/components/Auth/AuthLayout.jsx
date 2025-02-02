@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
  */
 export const AuthLayout = () => {
   /**
-   * ! Must contains only 'auth' elements'
+   * ! Must contain only 'auth' elements'
    */
   return (
     <div>
