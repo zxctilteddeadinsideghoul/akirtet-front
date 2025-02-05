@@ -1,5 +1,5 @@
 import { AppRouter } from "./components/Router/Router";
-
+import "./App.css";
 /**
  * Main application
  * @returns {JSX.Element} App

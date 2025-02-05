@@ -10,11 +10,9 @@ export const AuthLayout = () => {
    */
   return (
     <div>
-      <div>{/** <AuthHeader/> */}</div>
       <div>
         <Outlet />
       </div>
-      {/** Smth else */}
     </div>
   );
 };
