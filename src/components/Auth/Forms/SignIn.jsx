@@ -57,7 +57,7 @@ export const AuthSignInForm = () => {
           </button>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 "
+            className="w-full bg-blue-100 text-white py-2 rounded-lg hover:bg-blue-700 "
           >
             Войти
           </button>
