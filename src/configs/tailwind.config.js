@@ -1,15 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 
-export default {
+module.exports = {
+  content: ["../src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
-    colors:{
-      mywhite: "#FFFFFF",
-      lightgray: "#F8F8F9",
-      customgreen: "#7CDABF",
-      primaryblue: "#91C9E4",
-      secondaryblue: "#4782AA",
-      dangerblue: "#C5DCEC",
-      twgray: "#F0F0F0"
-    }
-  }
-}
+    extend: {
+      colors: {
+        lightgray: "#F8F8F9",
+        customgreen: "#7CDABF",
+        primaryblue: "#91C9E4",
+        secondaryblue: "#4782AA",
+        dangerblue: "#C5DCEC",
+
+        general_blue: "#1E56A0",
+      },
+    },
+  },
+};
