@@ -12,5 +12,6 @@ export const Auth = () => {
         <AuthSignInForm />
       </div>
     </div>
+
   );
 };
