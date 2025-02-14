@@ -1,11 +1,6 @@
-import { signInAction } from "../Actions/SignIn";
 import { memo } from "react";
 
-/**
- * Sign in form
- * @returns {JSX.Element} Form
- */
-export const AuthSignInForm = memo(({ switchToSignUp }) => {
+export const AuthSignUpForm = memo(({ switchToSignIn }) => {
   return (
     <>
       <form className="w-78">
@@ -38,7 +33,21 @@ export const AuthSignInForm = memo(({ switchToSignUp }) => {
             id="password"
             placeholder="Пароль"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-            autoComplete="current-password"
+          />
+        </div>
+        <div className="mb-5">
+          <label
+            required
+            className="block text-gray-700  text-sm font-medium mb-2"
+            htmlFor="password-repeat"
+          >
+            Подвтерждение пароля
+          </label>
+          <input
+            type="password"
+            id="password-repeat"
+            placeholder="Введите пароль еще раз "
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
         <div className="flex items-center mb-5">
@@ -58,13 +67,13 @@ export const AuthSignInForm = memo(({ switchToSignUp }) => {
           <button
             type="button"
             className="w-full bg-white text-lg font-medium text-gray-600 py-2 rounded-lg ring-1 ring-zinc-400 hover:ring-zinc-300 transition"
-            onClick={switchToSignUp}
           >
             Зарегистрироваться
           </button>
           <button
             type="button"
             className="w-full bg-general_blue text-lg font-medium stroke-current text-white py-2 rounded-lg"
+            onClick={switchToSignIn}
           >
             Войти
           </button>

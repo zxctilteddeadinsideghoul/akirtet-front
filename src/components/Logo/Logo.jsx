@@ -1,8 +1,9 @@
-import logo from '../../assets/logo.svg';
-import {Image} from "react-bootstrap";
+import logo from "../../assets/demoLogo.svg";
 
-export const Logo = () => {
-  return(
-    <Image src={logo} alt="logo"></Image>
-  )
-}
+/**
+ * Logo representation
+ * @returns {JSX.Element} Logo
+ */
+export const Logo = ({ className }) => {
+  return <img className={className} src={logo} alt="logo" />;
+};

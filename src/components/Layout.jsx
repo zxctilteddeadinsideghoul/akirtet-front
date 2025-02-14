@@ -1,7 +1,6 @@
-import { Sidebar } from "./sidebar";
 import { Outlet } from "react-router-dom";
 import { Header } from "./Header.jsx";
-
+import { Sidebar } from "./Sidebar.jsx";
 /**
  * Global page layout
  * @contains [Sidebar, Header, Outlet]
@@ -16,10 +15,10 @@ export const Layout = () => {
       {/**
        * Sidebar container
        */}
-      <div className="bg-primaryblue">
+      <div>
         <Sidebar />
       </div>
-      <div className="bg-white overflow-auto p-4">
+      <div>
         {/**
          * Display place for 'Chat' and 'Profile'
          */}
