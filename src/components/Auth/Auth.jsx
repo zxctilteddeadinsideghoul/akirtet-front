@@ -1,6 +1,6 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthSignInForm } from "./Forms/SignIn";
-import { AuthSignUpForm } from "./Forms/SignUp";
+import {useContext, useEffect, useState} from "react";
+import {AuthSignInForm} from "./Forms/SignIn";
+import {AuthSignUpForm} from "./Forms/SignUp";
 
 /**
  * Auth page representation
@@ -8,13 +8,20 @@ import { AuthSignUpForm } from "./Forms/SignUp";
  */
 export const Auth = () => {
   const [isSignIn, setIsSighIn] = useState(true);
+  const [emailInput, setEmailInput] = useState("121");
 
   return (
     <>
       {isSignIn ? (
-        <AuthSignInForm switchToSignUp={() => setIsSighIn(false)} />
+        <AuthSignInForm switchToSignUp={() => setIsSighIn(false)}
+                        saveEmailInput={(e) => setEmailInput(e.target.value)}
+                        currentEmailInput={emailInput}
+        />
       ) : (
-        <AuthSignUpForm switchToSignIn={() => setIsSighIn(true)} />
+        <AuthSignUpForm switchToSignIn={() => setIsSighIn(true)}
+                        saveEmailInput={(e) => setEmailInput(e.target.value)}
+                        currentEmailInput={emailInput}
+        />
       )}
     </>
   );

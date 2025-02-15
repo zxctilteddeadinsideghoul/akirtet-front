@@ -5,7 +5,7 @@ import { memo } from "react";
  * Sign in form
  * @returns {JSX.Element} Form
  */
-export const AuthSignInForm = memo(({ switchToSignUp }) => {
+export const AuthSignInForm = memo(({ switchToSignUp, saveEmailInput, currentEmailInput}) => {
   return (
     <>
       <form className="w-78">
@@ -22,6 +22,8 @@ export const AuthSignInForm = memo(({ switchToSignUp }) => {
             id="email"
             autoComplete="current-email"
             placeholder="mail@example.com"
+            value={currentEmailInput}
+            onChange={saveEmailInput}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>

@@ -1,6 +1,6 @@
-import { memo } from "react";
+import {memo} from "react";
 
-export const AuthSignUpForm = memo(({ switchToSignIn }) => {
+export const AuthSignUpForm = memo(({switchToSignIn, saveEmailInput, currentEmailInput}) => {
   return (
     <>
       <form className="w-78">
@@ -17,6 +17,8 @@ export const AuthSignUpForm = memo(({ switchToSignIn }) => {
             id="email"
             autoComplete="current-email"
             placeholder="mail@example.com"
+            value={currentEmailInput}
+            onChange={saveEmailInput}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
@@ -67,15 +69,15 @@ export const AuthSignUpForm = memo(({ switchToSignIn }) => {
           <button
             type="button"
             className="w-full bg-white text-lg font-medium text-gray-600 py-2 rounded-lg ring-1 ring-zinc-400 hover:ring-zinc-300 transition"
+            onClick={switchToSignIn}
           >
-            Зарегистрироваться
+            Войти по email
           </button>
           <button
             type="button"
             className="w-full bg-general_blue text-lg font-medium stroke-current text-white py-2 rounded-lg"
-            onClick={switchToSignIn}
           >
-            Войти
+            Зарегистрироваться
           </button>
         </div>
       </form>
