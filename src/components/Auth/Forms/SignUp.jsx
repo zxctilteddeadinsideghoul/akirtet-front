@@ -1,6 +1,12 @@
-import {memo} from "react";
+import {memo, useState} from "react";
+import PasswordStrengthBar from "react-password-strength-bar";
+import {register} from "../Actions/SignUp.jsx";
 
 export const AuthSignUpForm = memo(({switchToSignIn, saveEmailInput, currentEmailInput}) => {
+  const [password, setPassword] = useState('');
+
+  const [isPasswordsEqual, setIsPasswordsEqual] = useState(true);
+
   return (
     <>
       <form className="w-78">
@@ -22,7 +28,7 @@ export const AuthSignUpForm = memo(({switchToSignIn, saveEmailInput, currentEmai
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
-        <div className="mb-5">
+        <div className="mb-4">
           <label
             required
             className="block text-gray-600  text-xl font-medium mb-2"
@@ -34,21 +40,29 @@ export const AuthSignUpForm = memo(({switchToSignIn, saveEmailInput, currentEmai
             type="password"
             id="password"
             placeholder="Пароль"
+            onChange={(e) => {
+              setPassword(e.target.value)
+            }}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
+          <PasswordStrengthBar password={password} onChangeScore={(score) => {console.log(score)}} scoreWords={[""]} shortScoreWord="" />
         </div>
         <div className="mb-5">
           <label
             required
-            className="block text-gray-700  text-sm font-medium mb-2"
+            className="block mb-2"
             htmlFor="password-repeat"
           >
-            Подвтерждение пароля
+            {(isPasswordsEqual) ? <div className="text-gray-600 text-xl font-medium">Подтверждение пароля</div> :
+              <div className="text-red-600 text-xl font-medium">Пароли разные!</div>}
           </label>
           <input
             type="password"
             id="password-repeat"
             placeholder="Введите пароль еще раз "
+            onChange={(e) => {
+              setIsPasswordsEqual(password === e.target.value)
+            }}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
@@ -75,7 +89,9 @@ export const AuthSignUpForm = memo(({switchToSignIn, saveEmailInput, currentEmai
           </button>
           <button
             type="button"
-            className="w-full bg-general_blue text-lg font-medium stroke-current text-white py-2 rounded-lg"
+            className="w-full bg-general_blue text-lg font-medium stroke-current text-white py-2 rounded-lg focus:ring-2 focus:ring-blue-400"
+            disabled={!isPasswordsEqual}
+            onClick={() => {register(currentEmailInput, password)}}
           >
             Зарегистрироваться
           </button>

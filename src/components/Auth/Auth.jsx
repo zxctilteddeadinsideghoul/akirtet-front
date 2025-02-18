@@ -8,7 +8,7 @@ import {AuthSignUpForm} from "./Forms/SignUp";
  */
 export const Auth = () => {
   const [isSignIn, setIsSighIn] = useState(true);
-  const [emailInput, setEmailInput] = useState("121");
+  const [emailInput, setEmailInput] = useState("");
 
   return (
     <>
