@@ -1,11 +1,15 @@
-import { signInAction } from "../Actions/SignIn";
-import { memo } from "react";
+import { login } from "../Actions/SignIn";
+import {memo, useState} from "react";
+
 
 /**
  * Sign in form
  * @returns {JSX.Element} Form
  */
 export const AuthSignInForm = memo(({ switchToSignUp, saveEmailInput, currentEmailInput}) => {
+  const [password, setPassword] = useState("");
+
+
   return (
     <>
       <form className="w-78">
@@ -41,6 +45,7 @@ export const AuthSignInForm = memo(({ switchToSignUp, saveEmailInput, currentEma
             placeholder="Пароль"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
             autoComplete="current-password"
+            onChange={(e) => {setPassword(e.target.value)}}
           />
         </div>
         <div className="flex items-center mb-5">
@@ -67,6 +72,9 @@ export const AuthSignInForm = memo(({ switchToSignUp, saveEmailInput, currentEma
           <button
             type="button"
             className="w-full bg-general_blue text-lg font-medium stroke-current text-white py-2 rounded-lg"
+            onClick={() => {
+              login(currentEmailInput, password)
+            }}
           >
             Войти
           </button>
